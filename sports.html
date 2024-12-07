@@ -1,0 +1,137 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEPI Friday</title>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body id="grid_container">
+
+
+    <!-- <nav id="nav_bar"> -->
+        <div id="main_nav">
+             
+             
+             <div class="items">
+                <a  href="index.html"><img id="logo" src="./assets/images/logo.png" alt="YnotNews"></a>
+                <ul>
+                    <li>
+                        <a href="economy.html">Economy</a>
+                    </li>
+                    <li>
+                        <a href="sports.html">Sports</a>
+                    </li>
+                    <li>
+                        <a href="health.html">Health</a>
+                    </li>
+                    <li>
+                        <a href="arts.html">Arts</a>
+                    </li>
+                    
+                </ul>
+               
+            </div>
+
+             <div id="auth_panel">
+                <a class="auth" href="./auth/register.html"><p>Sign Up</p></a>
+                <a class="auth" href="./auth/login.html"><p>Login</p></a>
+             </div>
+        </div>
+
+    <!-- </nav> -->
+
+    <div class="main">
+       <div id="breaking_news">
+            <div id="most_important">
+                
+
+            </div>
+            <div id="catch_up">
+
+            </div>
+
+       </div>
+    </div>
+    
+
+    <div class="ads_right">
+       
+    </div>
+
+
+        <script src="./assets/js/jquery.js"></script>
+        <script>
+            $(document).ready(
+                function() {
+
+                    // Breaking News
+                    let breaking_news = [
+                        {id:1,img:'./assets/images/sports_breaking_1.jpg',desc:'Sky Sports - Sports News, Transfers, Scores | Watch Live Sport'},
+                        {id:2,img:'./assets/images/sports_breaking_2.jpg',desc:'Latest sports news and headlines - CBS Texas'},
+                        {id:3,img:'./assets/images/sports_breaking_3.jpg',desc:'South Korean President Yoon Suk Yeol declares state of martial law'},
+                        {id:4,img:'./assets/images/sports_breaking_4.jpg',desc:'Egypt to launch regional news channel - Al-Monitor: The Middle Eastʼs leading independent news source'},
+                        // {id:5,img:'./assets/images/breaking_news_1.jpg',desc:'South Korea president survives impeachment but party will seek his resignation'},
+                        // {id:6,img:'./assets/images/breaking_news_1.jpg',desc:'South Korea president survives impeachment but party will seek his resignation'},
+                    ]
+
+                    breaking_news.map((item,index)=> { 
+                        let breaking_news_div = `<div class='breaking_news_card'><img src=${item.img}> <p>${item.desc}</p> </div>`
+                        $('#most_important').append(breaking_news_div)
+                    });
+
+
+
+                    catch_up_news = [
+                        // {id:1,img:'./assets/images/catch_up_1.jpg',desc:'South Korean president accepts defense minister’s resignation amid backlash over martial law move'},
+                        {id:1,img:'./assets/images/sports_catch_up_1.jpg',desc:'South Korean president accepts defense minister’s resignation amid backlash over martial law move'},
+                        {id:2,img:'./assets/images/sports_catch_up_2.jpg',desc:'Egypt, Eritrea Reportedly Exploring Potential Military Deal Amidst Rising Regional Tensions - 17.09.2024'},
+                        {id:3,img:'./assets/images/sports_catch_up_3.jpg',desc:'Ahram Online - News, Business, Culture, Sports & Multimedia from Egypt - Ahram Online'},
+                        {id:4,img:'./assets/images/sports_catch_up_4.jpg',desc:'EU announces $8 billion aid package for Egypt as concerns over migration mount | PBS News'},
+                    ]
+
+                    catch_up_news.map((item,index)=> { 
+                        let catch_up_div = `<div class='catch_up_card'><img src=${item.img}> <p>${item.desc}</p> </div>`
+                        $('#catch_up').append(catch_up_div)
+                    });
+
+
+                    ads = [
+                        {id:1,img:'./assets/images/ads.png'},
+                        {id:2,img:'./assets/images/ads_2.jpg'},
+                        {id:3,img:'./assets/images/ads_3.png'},
+                        {id:4,img:'./assets/images/ads_4.png'},
+                    ];
+
+                    ads.map((item,index)=>{
+                        $('.ads_right').append(`<img src=${item.img} >`)
+                    })
+
+                    $('#side_panel').click(
+                        function() {
+                            $('#panel').toggle();
+                        }
+                    );
+
+                    $('.ad_img').click(
+                        function() {
+                        let myDiv = "<div><img src='./assets/images/ads.png' alt=''> </div>";
+                        $('#append').append(myDiv);
+                        }
+                    );
+
+
+                    
+
+
+                }
+
+                
+            )
+        </script>
+    </body>
+</html>
